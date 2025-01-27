@@ -14,6 +14,7 @@ namespace ATframework3demo.TestCases
                 caseCollection.Add(new TestCase("Создание комментария от другого юзера под постом в ленте", homePage => CreateDeal(homePage)));
                 return caseCollection;
             }
+            //Создание комментария от другого юзера под постом в ленте
             void CreateDeal(PortalHomePage homePage)
             {
                 var comment = new Bitrix24Comments { Comment = "Comment" };
