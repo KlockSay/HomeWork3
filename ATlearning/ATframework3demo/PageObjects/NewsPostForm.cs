@@ -1,4 +1,5 @@
 ﻿using atFrameWork2.BaseFramework;
+using atFrameWork2.PageObjects;
 using atFrameWork2.SeleniumFramework;
 using OpenQA.Selenium;
 
@@ -24,6 +25,12 @@ namespace ATframework3demo.PageObjects
             bool isRecipientPresent = Waiters.WaitForCondition(() => recipientsArea.AssertTextContains(recipientName, default, Driver), 2, 6,
                 $"Ожидание появления строки '{recipientName}' в '{recipientsArea.Description}'");
             return isRecipientPresent;
+        }
+
+        public PortalHomePage SendMessage()
+        {
+            throw new NotImplementedException();
+            return new PortalHomePage();
         }
     }
 }

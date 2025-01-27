@@ -19,5 +19,11 @@ namespace ATframework3demo.PageObjects
             btnPostCreate.Click(Driver);
             return new NewsPostForm(Driver);
         }
+
+        public NewsPostForm SetMessage()
+        {
+            throw new NotImplementedException();
+            return new NewsPostForm;
+        }
     }
 }

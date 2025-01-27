@@ -31,5 +31,23 @@ namespace atFrameWork2.PageObjects
             pwdField.SendKeys(Keys.Enter, Driver);
             return new PortalHomePage(Driver);
         }
+
+        public PortalHomePage LoginNewUser()
+        {
+            throw new NotImplementedException();
+            return new PortalHomePage();
+        }
+
+        public PortalLoginPage CleanLogin()
+        {
+            throw new NotImplementedException();
+            return new PortalLoginPage();
+        }
+
+        public PortalHomePage LoginAdmin()
+        {
+            throw new NotImplementedException();
+            return new PortalHomePage();
+        }
     }
 }
