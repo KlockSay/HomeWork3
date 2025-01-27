@@ -23,7 +23,7 @@ namespace ATframework3demo.PageObjects
         public NewsPostForm SetMessage()
         {
             throw new NotImplementedException();
-            return new NewsPostForm;
+            return new NewsPostForm();
         }
     }
 }
