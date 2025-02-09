@@ -1,6 +1,7 @@
 ﻿using atFrameWork2.BaseFramework;
 using atFrameWork2.PageObjects;
 using atFrameWork2.SeleniumFramework;
+using ATframework3demo.TestEntities;
 using OpenQA.Selenium;
 
 namespace ATframework3demo.PageObjects
@@ -27,10 +28,24 @@ namespace ATframework3demo.PageObjects
             return isRecipientPresent;
         }
 
+        public NewsPostForm SetMessage(Bitrix24Comments newmessage)
+        {
+            var FrameMassage = new WebItem("//iframe[@class='bx-editor-iframe']", "Фрейм сообщения");
+            FrameMassage.SwitchToFrame();
+            var InputMassage = new WebItem("//body[@contenteditable='true']", "Поле сообщения");
+            InputMassage.SendKeys(newmessage.NewMessage);
+            WebDriverActions.SwitchToDefaultContent();
+            return new NewsPostForm(Driver);
+        }
+
+
+        WebItem ButtonSendPost =>
+            new WebItem("//div[@id='feed-add-buttons-blockblogPostForm']/span[@id='blog-submit-button-save']",
+                "Кнопка отправить пост");
         public PortalHomePage SendMessage()
         {
-            throw new NotImplementedException();
-            return new PortalHomePage();
+            ButtonSendPost.Click();
+            return new PortalHomePage(Driver);
         }
     }
 }

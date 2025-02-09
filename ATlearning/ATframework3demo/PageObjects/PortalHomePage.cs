@@ -19,34 +19,34 @@ namespace atFrameWork2.PageObjects
 
         public PortalLeftMenu LeftMenu => new PortalLeftMenu(Driver);
 
-        public NewsPage NewMessage()
+        WebItem NewMessageButton =>
+            new WebItem("//div[@id='microoPostFormLHE_blogPostForm_inner']", 
+                "Область в новостях 'Написать сообщение'");
+        public NewsPostForm NewMessage()
         {
-            throw new NotImplementedException();
-            return new NewsPage();
+            NewMessageButton.Click();
+            return new NewsPostForm(Driver);
         }
-
-        public GeneralUpMenu OpenUpMenu()
-        {
-            throw new NotImplementedException();
-            return new GeneralUpMenu();
-        }
-
+        WebItem NewCommentButton =>
+            new WebItem("//div[contains(@id, 'record-BLOG')]/../div[@class='feed-com-footer']/div/a",
+                "Область написание комментария");
         public PolComment AddComment()
         {
-            throw new NotImplementedException();
+            NewCommentButton.Click();
             return new PolComment();
         }
 
-        public PortalHomePage LoginAdmin()
+        public bool AssertPostField(Bitrix24Comments newmessange)
         {
-            throw new NotImplementedException();
-            return new PortalHomePage();
+            return new WebItem($"//div[@class='feed-post-text'][text()= '{newmessange.NewMessage}']", "Текст поста").AssertTextContains(newmessange.NewMessage, "Поста нет");
+
+
         }
 
         public bool AssertCommentField(Bitrix24Comments comment)
         {
-            new WebItem("//path", "Комментарий").AssertTextContains(comment.Comment, "Комментарий не корректный");
-            throw new NotImplementedException();
+            return new WebItem($"//div[@class='feed-com-text-inner-inner']/div[text()= '{comment.Comment}']", "Текст комментария").AssertTextContains(comment.Comment, "Комментарий не корректный");
+
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using atFrameWork2.SeleniumFramework;
+﻿using atFrameWork2.BaseFramework;
+using atFrameWork2.SeleniumFramework;
+using ATframework3demo.TestEntities;
 using OpenQA.Selenium;
 
 namespace ATframework3demo.PageObjects
@@ -18,12 +20,6 @@ namespace ATframework3demo.PageObjects
             var btnPostCreate = new WebItem("//div[@id='microoPostFormLHE_blogPostForm_inner']", "Область в новостях 'Написать сообщение'");
             btnPostCreate.Click(Driver);
             return new NewsPostForm(Driver);
-        }
-
-        public NewsPostForm SetMessage()
-        {
-            throw new NotImplementedException();
-            return new NewsPostForm();
         }
     }
 }
