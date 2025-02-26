@@ -1,5 +1,6 @@
 ﻿using atFrameWork2.SeleniumFramework;
 using ATframework3demo.PageObjects;
+using ATframework3demo.PageObjects.Group;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -70,6 +71,14 @@ namespace atFrameWork2.PageObjects
             var btnNews = new WebItem("//li[@id='bx_left_menu_menu_live_feed']", "Пункт левого меню Новости");
             ClickMenuItem(btnNews);
             return new NewsPage(Driver);
+        }
+
+        public GeneralGroupMenu GroupOpen()
+        {
+            var btnGroups = new WebItem("//li[@id='bx_left_menu_menu_all_groups']", "Группы в левом меню");
+            ClickMenuItem(btnGroups);
+            return new GeneralGroupMenu();
+            throw new NotImplementedException();
         }
     }
 }
