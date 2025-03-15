@@ -1,5 +1,6 @@
 ﻿using atFrameWork2.SeleniumFramework;
 using ATframework3demo.PageObjects;
+using ATframework3demo.PageObjects.Automatization;
 using ATframework3demo.PageObjects.Group;
 using OpenQA.Selenium;
 using System;
@@ -79,6 +80,13 @@ namespace atFrameWork2.PageObjects
             ClickMenuItem(btnGroups);
             return new GeneralGroupMenu();
             throw new NotImplementedException();
+        }
+
+        public AutomatizationPage AutomatizationOpen()
+        {
+            var btnAutomatization = new WebItem("//li[@id='bx_left_menu_menu_automation']", "Автоматизация в левом меню");
+            ClickMenuItem(btnAutomatization);
+            return new AutomatizationPage();
         }
     }
 }
