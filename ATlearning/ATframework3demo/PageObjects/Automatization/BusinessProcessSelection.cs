@@ -7,7 +7,7 @@ namespace ATframework3demo.PageObjects.Automatization
     {
         public OutgoingDocumentsForm ClickOutgoingDocuments()
         {
-            var btnOutgoingDocumentsForm = new WebItem("//span[@data-icon-url='/upload/iblock/9c0/dbaao48ihfztv4zyyoj1xbflwr9dt04j/df3e7ecfaf528feaa52912c042c48c5c.png']", "Выбор бизнес-процесса Исходящие документы");
+            var btnOutgoingDocumentsForm = new WebItem("//div[@id[contains(., 'menu-popup-')]]/div/div/span[4]", "Выбор бизнес-процесса Исходящие документы");
             btnOutgoingDocumentsForm.Click();
             return new OutgoingDocumentsForm();
         }

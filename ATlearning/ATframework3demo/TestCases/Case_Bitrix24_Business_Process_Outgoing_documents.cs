@@ -77,12 +77,7 @@ namespace ATframework3demo.TestCases
                         .ApplyTemplateChanges()
                         //Все сохранить
                         .SaveTemplate();
-
-
-
                 }
-
-               
             }
         }
     }

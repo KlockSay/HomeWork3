@@ -7,7 +7,7 @@ namespace ATframework3demo.PageObjects.Automatization
     {
         public GeneralSampleOutgoingDocuments SampleOutgoingDocuments()
         {
-            var btnGeneralSampleOutgoingDocuments = new WebItem("//a[@href='/bizproc/processes/12/bp_edit/14/']", "Кнопка исходящие документы");
+            var btnGeneralSampleOutgoingDocuments = new WebItem("//table[@id='bizproc_wflist_lists']/tbody/tr[3]/td[2]/a", "Кнопка исходящие документы");
             btnGeneralSampleOutgoingDocuments.Click();
             return new GeneralSampleOutgoingDocuments();
         }
