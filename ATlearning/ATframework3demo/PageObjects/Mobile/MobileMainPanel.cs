@@ -15,5 +15,13 @@ namespace ATframework3demo.PageObjects.Mobile
 
             return new MobileTasksListPage();
         }
+
+        public MobileMoreListPage SelectMore()
+        {
+            var moreTab = new MobileItem("//android.widget.FrameLayout[@content-desc=\"bottombar_tab_more_counter_2\"]",
+                "Таб 'More'");
+            moreTab.Click();
+            return new MobileMoreListPage();
+        }
     }
 }
