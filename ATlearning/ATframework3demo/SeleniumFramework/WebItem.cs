@@ -177,5 +177,7 @@ namespace atFrameWork2.SeleniumFramework
                 PrintActionInfo($"Получен размер '{elementSize}'. Элемент");
             return elementSize;
         }
+
+        
     }
 }
