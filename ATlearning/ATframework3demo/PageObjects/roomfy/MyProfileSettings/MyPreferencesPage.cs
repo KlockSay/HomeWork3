@@ -14,8 +14,6 @@ namespace ATframework3demo.PageObjects.roomfy.MyProfileSettings
             btnGenderNeighbour.SendKeys(Keys.ArrowDown);
             var btnAgeFromNeighbour = new WebItem("//input[@name='preferences[age_range][min]']", "Ввод минимального возраста соседа");
             btnAgeFromNeighbour.Click();
-            btnAgeFromNeighbour.SendKeys(Keys.Control + "a");
-            btnAgeFromNeighbour.SendKeys(Keys.Delete);
             btnAgeFromNeighbour.SendKeys(agefrom.AgeFrom);
             var btnAgeToNeighbour = new WebItem("//input[@name='preferences[age_range][max]']", "Ввод максимального возраста соседа");
             btnAgeToNeighbour.Click();
@@ -94,6 +92,10 @@ namespace ATframework3demo.PageObjects.roomfy.MyProfileSettings
             var btnGenderNeighbour = new WebItem("//select[@name='preferences[gender]']", "Выбор пола соседа - Не важно");
             btnGenderNeighbour.Click();
             btnGenderNeighbour.SendKeys(Keys.ArrowUp);
+            var btnAgeFromNeighbour = new WebItem("//input[@name='preferences[age_range][min]']", "Ввод минимального возраста соседа");
+            btnAgeFromNeighbour.Click();
+            btnAgeFromNeighbour.SendKeys(Keys.Control + "a");
+            btnAgeFromNeighbour.SendKeys(Keys.Delete);
             var btnAgeToNeighbour = new WebItem("//input[@name='preferences[age_range][max]']", "Очиста поля максимального возраста соседа");
             btnAgeToNeighbour.Click();
             btnAgeToNeighbour.SendKeys(Keys.Control + "a");

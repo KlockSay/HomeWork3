@@ -1,6 +1,7 @@
 ﻿
 
 using atFrameWork2.SeleniumFramework;
+using atFrameWork2.TestEntities;
 using ATframework3demo.TestEntities;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;

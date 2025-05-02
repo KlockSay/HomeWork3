@@ -22,26 +22,16 @@ namespace ATframework3demo.TestCases
                 {
                     
                     string salt = HelperMethods.GetDateTimeSaltString();
-                    var title = new RoomfyCreateAd { Title = "Срочно ищу квартиру" + salt };
-                    var description = new RoomfyCreateAd { Description = "Я очень спокойный сосед" + HelperMethods.GetDateTimeSaltString() };
-                    var city = new RoomfyCreateAd { City = "Калининград" };
-                    var street = new RoomfyCreateAd { Street = "Юбилейная улица" };
-                    var housenumber = new RoomfyCreateAd { HouseNumber = "16к1" };
-                    var agefrom = new RoomfyCreateAd { AgeFrom = "20" };
-                    var ageto = new RoomfyCreateAd { AgeTo = "25" };
-                    var pricefrom = new RoomfyCreateAd { PriceFrom = "10000" };
-                    var priceto = new RoomfyCreateAd { PriceTo = "15000" };
+                    var title = new RoomfyDeactivationAd { Title = "Срочно ищу квартиру" + salt };
+                    var description = new RoomfyDeactivationAd { Description = "Я очень спокойный сосед" + HelperMethods.GetDateTimeSaltString() };
                     //Необходимо в начале создать объявление, чтобы в дальнейшем его деактивировать 
-                    //Заполнить поле населенного пункта
-                    var CityUpdate = homePage
-                        .CityUpdate(city);
                     var DeactivationAd = homePage
                     //Нажать кнопку "+Создать объявление"
-                        .CreateAd()
+                        .CreateAd_1()
                     //Заполнить форму "Создать объявление" и нажать "Далее"
-                        .FillFormAd(title, description, city, street, housenumber)
-                    //Заполнить форму мои предпочтения и опубликовать объявление
-                        .FillFormPreferences(agefrom, ageto, pricefrom, priceto);
+                        .FillFormAd_1(title, description)
+                    //Отправить форму мои предпочтения
+                        .FillFormPreferences_1();
                     //Перейти на страницу "Мои объявления"
                     var DeactivationAd_2 = homePage
                         .ActiveAds()

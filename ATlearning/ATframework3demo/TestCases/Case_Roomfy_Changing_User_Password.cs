@@ -1,5 +1,6 @@
 ﻿using atFrameWork2.BaseFramework;
 using atFrameWork2.PageObjects;
+using atFrameWork2.TestEntities;
 using ATframework3demo.TestEntities;
 
 namespace ATframework3demo.TestCases
@@ -18,7 +19,7 @@ namespace ATframework3demo.TestCases
                 {
                     var newpassword = new RoomfyChangingPassword { NewPassword = "/Password228/" };
                     var oldpassword = new RoomfyChangingPassword { OldPassword = "/Semibratova228/" };
-                    var login = new RoomfyChangingPassword { Login = "Klokovskih@yandex.ru" };
+                    var login =  new RoomfyChangingPassword { Login = "Klokovskih@yandex.ru" };
                     var datebd = new RoomfyChangingPassword { DateBD = "04112000" };
                     var ChangingPassword_1 = homePage
                     // прейти на страницу "Мои профиль"

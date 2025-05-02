@@ -116,5 +116,29 @@ namespace atFrameWork2.PageObjects
             btnExit.Click();
             return new ActiveAdsPage();
         }
+
+        public AddCreatePage CreateAd_1()
+        {
+            var btnCreateAdd = new WebItem("//a[@href='/add']", "Нажать кнопку '+Создать объявление'");
+            btnCreateAdd.Click();
+            return new AddCreatePage();
+        }
+
+        public PortalHomePage CityUpdate_2(RoomfySearchAd city)
+        {
+            var btnCity = new WebItem("//input[@id='cityInput']", "Ввести город");
+            btnCity.Click();
+            btnCity.SendKeys(Keys.Control + "a");
+            btnCity.SendKeys(Keys.Delete);
+            btnCity.SendKeys(city.City);
+            return new PortalHomePage();
+        }
+
+        public AddCreatePage CreateAd_2()
+        {
+            var btnCreateAdd = new WebItem("//a[@href='/add']", "Нажать кнопку '+Создать объявление'");
+            btnCreateAdd.Click();
+            return new AddCreatePage();
+        }
     }
 }

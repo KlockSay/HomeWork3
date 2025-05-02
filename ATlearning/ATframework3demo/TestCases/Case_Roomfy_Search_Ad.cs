@@ -17,26 +17,26 @@ namespace ATframework3demo.TestCases
 
                 void PortalHomePageRoomfy(PortalHomePage homePage)
                 {
-                    var title = new RoomfyCreateAd { Title = "Срочно ищу квартиру" + HelperMethods.GetDateTimeSaltString() };
-                    var description = new RoomfyCreateAd { Description = "Я очень спокойный сосед" + HelperMethods.GetDateTimeSaltString() };
-                    var city = new RoomfyCreateAd { City = "Калининград" };
-                    var street = new RoomfyCreateAd { Street = "Юбилейная улица" };
-                    var housenumber = new RoomfyCreateAd { HouseNumber = "16к1" };
-                    var agefrom = new RoomfyCreateAd { AgeFrom = "20" };
-                    var ageto = new RoomfyCreateAd { AgeTo = "25" };
-                    var pricefrom = new RoomfyCreateAd { PriceFrom = "10000" };
-                    var priceto = new RoomfyCreateAd { PriceTo = "15000" };
+                    var title = new RoomfySearchAd { Title = "Срочно ищу квартиру" + HelperMethods.GetDateTimeSaltString() };
+                    var description = new RoomfySearchAd { Description = "Я очень спокойный сосед" + HelperMethods.GetDateTimeSaltString() };
+                    var city = new RoomfySearchAd { City = "Калининград" };
+                    var street = new RoomfySearchAd { Street = "Юбилейная улица" };
+                    var housenumber = new RoomfySearchAd { HouseNumber = "16к1" };
+                    var agefrom = new RoomfySearchAd { AgeFrom = "20" };
+                    var ageto = new RoomfySearchAd { AgeTo = "25" };
+                    var pricefrom = new RoomfySearchAd { PriceFrom = "10000" };
+                    var priceto = new RoomfySearchAd { PriceTo = "15000" };
                     //Необходимо в начале создать объявление, чтобы потом его найти
                     //Заполнить поле населенного пункта
                     var CityUpdate = homePage
-                        .CityUpdate(city);
+                        .CityUpdate_2(city);
                     var SearchAd = homePage
                     //Нажать кнопку "+Создать объявление"
-                        .CreateAd()
+                        .CreateAd_2()
                     //Заполнить форму "Создать объявление" и нажать "Далее"
-                        .FillFormAd(title, description, city, street, housenumber)
+                        .FillFormAd_2(title, description, city, street, housenumber)
                     //Заполнить форму мои предпочтения и опубликовать объявление
-                        .FillFormPreferences(agefrom, ageto, pricefrom, priceto);
+                        .FillFormPreferences_2(agefrom, ageto, pricefrom, priceto);
                     var SearchAd_2 = homePage
                         //Перейти на страницу поиск
                         .OpenSearchAd()

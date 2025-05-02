@@ -7,7 +7,7 @@ namespace ATframework3demo.PageObjects.roomfy.MyAds
 {
     public class NoActiveAdsPage
     {
-        public NoActiveAdsPage AelertDeactivationAd(RoomfyCreateAd title)
+        public NoActiveAdsPage AelertDeactivationAd(RoomfyDeactivationAd title)
         {
             var adTitleElement = new WebItem("//div[@class='card-header-title']/span", "Заголовок объявления");
 

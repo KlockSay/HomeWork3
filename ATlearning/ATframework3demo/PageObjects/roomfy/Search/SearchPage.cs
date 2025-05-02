@@ -9,7 +9,7 @@ namespace ATframework3demo.PageObjects.roomfy.Search
 {
     public class SearchPage
     {
-        public SearchPage SearchFillFormPreference(RoomfyCreateAd agefrom, RoomfyCreateAd ageto, RoomfyCreateAd pricefrom, RoomfyCreateAd priceto)
+        public SearchPage SearchFillFormPreference(RoomfySearchAd agefrom, RoomfySearchAd ageto, RoomfySearchAd pricefrom, RoomfySearchAd priceto)
         {   
             var btnAdType = new WebItem("//select[@name='post_type']", "Выбор типа объявления - Ищу квартиру");
             btnAdType.Click();
@@ -52,7 +52,7 @@ namespace ATframework3demo.PageObjects.roomfy.Search
             return new SearchPage();
         }
 
-        public bool AlertSearchAd(RoomfyCreateAd title)
+        public bool AlertSearchAd(RoomfySearchAd title)
         {
             bool isTitleCorrect = new WebItem("//div[@class='card-header-title']/span", "Поле Названия").GetAttribute("innerText").Trim().Equals(title.Title + HelperMethods.GetDateTimeSaltString());
             return isTitleCorrect;

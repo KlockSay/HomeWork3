@@ -1,4 +1,5 @@
 ﻿using ATframework3demo.BaseFramework.BitrixCPinterraction;
+using ATframework3demo.TestEntities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,6 +8,7 @@ namespace atFrameWork2.TestEntities
 {
     public class User
     {
+
         public User() { }
 
         public User(string loginAkaEmail, string password, string name, string lastName)

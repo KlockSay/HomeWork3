@@ -11,14 +11,14 @@ namespace ATframework3demo.PageObjects.roomfy.MyAds
 {
     public class ActiveAdsPage
     {
-        public ActiveAdsPage DeactivationAds(RoomfyCreateAd title)
+        public ActiveAdsPage DeactivationAds(RoomfyDeactivationAd title)
         {
             
             // Используем значение title.Title, которое уже содержит соль
             string expectedTitle = title.Title;
 
             // XPath: ищем кнопку в карточке, где заголовок точно совпадает
-            string xpathToButton = $"//div[contains(@class, 'card') and .//div[@class='card-header-title']/span[text()='{expectedTitle}']]//button[@aria-label='deactivate']";
+            string xpathToButton = $"//div[contains(@class, 'post-card')][.//div[@class='card-header-title']/span[contains(., '{expectedTitle}')]]//button[@aria-label='deactivate']";
 
             var deactivateButton = new WebItem(xpathToButton, "Кнопка деактивации нужного объявления");
             deactivateButton.Click();
